@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Upload } from "lucide-react";
+
 import { useUser } from "../../providers/UserProvider";
 import { useAxios } from "../../hooks/useAxios";
 import Link from "next/link";

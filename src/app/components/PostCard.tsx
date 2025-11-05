@@ -131,9 +131,9 @@ export const PostCard = ({
   return (
     <div
       key={post._id}
-      className="mb-8 text-white bg-black rounded overflow-hidden"
+      className="  text-white bg-black rounded overflow-hidden w-[460] items-center mt-3"
     >
-      <div className="flex items-center justify-between text-sm text-stone-300 px-4 py-3">
+      <div className="flex items-center justify-between text-sm text-stone-300 px-4 py-3 ">
         <div className="flex items-center gap-2">
           <Image
             src={post.createdBy.profilePicture || "/default-avatar.png"}
@@ -176,12 +176,12 @@ export const PostCard = ({
         )}
       </div>
 
-      <div className="w-full bg-black flex justify-center">
+      <div className=" bg-black flex justify-center items-center  h-[600] border border-stone-700 rounded ">
         {post.imageUrl ? (
           <img
             src={post.imageUrl}
             alt="Post image"
-            className="w-full max-h-[600px] object-contain bg-black"
+            className="max-h-[600px] object-contain  "
           />
         ) : (
           <div className="text-stone-500 p-4">No image available</div>
@@ -245,8 +245,6 @@ export const PostCard = ({
       <div className="px-4 text-sm text-stone-300 flex justify-between">
         <div className="flex gap-4 font-medium">
           <span>{likeCount} likes</span>
-          <span>{comments.length} comments</span>
-          <span>{shareCount} shares</span>
         </div>
         <div className="flex gap-4 font-medium">
           <span>{saveCount} saves</span>
@@ -263,7 +261,7 @@ export const PostCard = ({
       <div className="px-4 mt-2 text-sm text-stone-300">
         <div className="overflow-y-auto space-y-2">
           {comments.slice(0, totalComments).map((comment) => (
-            <div key={comment._id} className="flex gap-2 items-start">
+            <div key={comment._id} className="flex gap-2 items-start ">
               <div className="flex-shrink-0">
                 <Image
                   src={
@@ -324,17 +322,15 @@ export const PostCard = ({
       {showAllComments && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
           <div className="bg-[#161616] max-w-3xl max-h-[50vh] overflow-hidden rounded-lg p-4 flex flex-col md:flex-row gap-x-3">
-            <div className="w-full flex justify-center items-center">
+            <div className=" flex justify-center items-center">
               {post.imageUrl ? (
                 <img
                   src={post.imageUrl}
                   alt="Post image"
-                  className="max-h-[70vh] w-auto object-contain rounded-lg"
+                  className="max-h-[70vh] m-auto object-contain rounded-lg"
                 />
               ) : (
-                <div className="text-stone-500 p-4">
-                  nothing to show you buddy
-                </div>
+                <div className="text-stone-500 p-4">nothing to show you</div>
               )}
             </div>
 

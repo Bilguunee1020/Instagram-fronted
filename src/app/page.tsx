@@ -6,7 +6,6 @@ import { redirect } from "next/navigation";
 import { Navbar } from "./components/Navbar";
 import { Post } from "./types";
 import { PostCard } from "./components/PostCard";
-import { UsersBar } from "./components/UsersBar";
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -31,7 +30,6 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <UsersBar />
 
       <div className="w-[600px] flex flex-col gap-4 mx-auto">
         {posts.map((post) => (
