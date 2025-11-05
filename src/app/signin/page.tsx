@@ -98,7 +98,7 @@ const SignInPage = () => {
               </Button>
 
               <Link
-                href="/signup"
+                href=""
                 className=" text-stone-300 hover:text-white hover:underline text-[15px]"
               >
                 Forgot password?
