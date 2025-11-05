@@ -107,7 +107,7 @@ const SignInPage = () => {
             <div className="border-b-2 border-stone-700 rounded-2xl my-4"></div>
             <div className="flex justify-center gap-x-1">
               <span className="text-[10px] text-stone-500">
-                Don't have an account?
+                Dont have an account?
               </span>
               <Link
                 href="/signup"

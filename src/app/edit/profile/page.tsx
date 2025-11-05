@@ -69,9 +69,9 @@ const EditProfilePage = () => {
 
       toast.success("Profile updated successfully!");
       router.push(`/${currentUser?.username}`);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      toast.error(err.message || "Failed to update profile");
+      const message = toast.error("");
     } finally {
       setUploading(false);
     }

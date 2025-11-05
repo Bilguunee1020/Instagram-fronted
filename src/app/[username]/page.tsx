@@ -37,7 +37,7 @@ const ProfilePage = () => {
         setUser(userData);
 
         const follows = userData.followers?.some(
-          (f: any) => f.createdBy._id === currentUser?._id
+          (f: { createdBy: User }) => f.createdBy._id === currentUser?._id
         );
 
         setIsFollowing(follows);
@@ -45,9 +45,16 @@ const ProfilePage = () => {
 
         const postRes = await axios.get(`/posts/user/${username}`);
         setPosts(postRes.data);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error(err);
-        if (err.response?.status === 404) setIsNotFound(true);
+        if (
+          typeof err === "object" &&
+          err !== null &&
+          "response" in err &&
+          (err as { response?: { status?: number } }).response?.status === 404
+        ) {
+          setIsNotFound(true);
+        }
       } finally {
         setLoading(false);
       }
