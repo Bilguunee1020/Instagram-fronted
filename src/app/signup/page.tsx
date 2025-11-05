@@ -15,7 +15,7 @@ const SignUpPage = () => {
   const [username, setUsername] = useState("");
 
   const handleSignup = async () => {
-    const response = await fetch("http://localhost:5500/signup", {
+    const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/signup", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -90,8 +90,13 @@ const SignUpPage = () => {
             <div className="border-b-2 border-stone-700 rounded-2xl my-4"></div>
 
             <div className="flex justify-center gap-x-1">
-              <span className="text-[10px] text-stone-500">Already have an account?</span>
-              <Link href="/" className="text-[10px] text-stone-300 hover:text-white hover:underline">
+              <span className="text-[10px] text-stone-500">
+                Already have an account?
+              </span>
+              <Link
+                href="/"
+                className="text-[10px] text-stone-300 hover:text-white hover:underline"
+              >
                 Sign in
               </Link>
             </div>

@@ -5,7 +5,7 @@ export const useAxios = () => {
   const { token } = useUser();
 
   const axios = realAxios.create({
-    baseURL: "http://localhost:5500",
+    baseURL: process.env.NEXT_PUBLIC_API_URL,
     headers: {
       Authorization: "Bearer " + token,
     },
